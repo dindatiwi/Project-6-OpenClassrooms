@@ -1,0 +1,138 @@
+
+/* ==========================================================================
+	General Styles
+========================================================================== */
+body{
+  font-family: 'Irish Grover', cursive;
+  font-weight: 400;
+  background-color: #85CDCA;
+  
+}
+.btn{
+  border-radius: 24px;
+}
+.btn-primary {
+  background-color:  #85CDCA !important;
+  border-color: none !important;
+  border: 0px !important;
+  color: black !important;
+}
+h3 {
+
+  padding: 20px 0 20px 0;
+}
+
+#imgleft1,#imgright2 {
+
+  padding-top: 30px;
+}
+
+#mapgen{
+	width: 604px;
+	height: 604px;
+	position: relative;
+}
+
+
+.left{
+	border-right: 2px solid #055507;
+	border-bottom: 2px solid #055507;
+	border-radius: 30px;
+	padding: 80px 10px 80px 10px;
+
+}
+.weaponds{
+	border-left: 2px solid #055507;
+	border-bottom: 2px solid #055507;
+	border-radius: 30px;
+	padding: 10px 5px 10px 5px;
+}
+
+.right{
+	border-left: 2px solid #055507;
+	border-bottom: 2px solid #055507;
+	border-radius: 30px;
+	padding: 80px 10px 80px 10px;
+	
+}
+
+.grid {
+  width: 60px;
+  height: 60px;
+  float:left;
+  border:2px solid #055507;
+  background-color: white;
+}
+
+.block {
+  background-image: url("../img/beer.png");
+  box-shadow: 0 0 20px black;
+  border: 2px solid #000;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50px 50px;
+  }
+  
+.range2 {
+  border: 1px solid #ffeb00;
+  background-color: #ffeb00;
+  box-shadow: 0 0 10px #000;
+  cursor: pointer;
+}  
+.arrow {
+  background-image: url("../img/arrow.png"); 
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50px 50px;
+}
+.axe {
+  background-image: url("../img/axe.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50px 50px;
+}
+.thor {
+  background-image: url("../img/thor.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50px 50px;
+}
+.shield {
+  background-image: url("../img/shield.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50px 50px;
+}
+.transparent{
+  opacity:0.7;
+}
+.opaque{
+  opacity:1;
+}
+.player1Moving {
+  background-image: url("../img/viking1.png");
+  background-size: auto 100%;
+  background-repeat:   no-repeat;
+  background-position: top center; 
+  opacity: 0.5;
+  filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+.player2Moving {
+  background-image: url("../img/viking2.png");
+  background-size: auto 100%;
+  background-repeat:   no-repeat;
+  background-position: top center; 
+  opacity: 0.5;
+  filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+.modal {
+  color: #000;
+}
+.modal-body   {
+    text-align: center !important;
+}
+.modal-title {
+  color: blue;
+}
+
+

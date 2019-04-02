@@ -1,0 +1,172 @@
+  <!DOCTYPE html>
+<html>
+
+  <head>
+
+    <meta charset="utf-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Turn Base Game</title>
+    <meta name="description" content="turn base game">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	  <link href="https://fonts.googleapis.com/css?family=Irish+Grover" rel="stylesheet">
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+	  <link rel="stylesheet" href="css/style.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+  
+	<div class="container-fluid">
+			<div class="row">
+			
+				<div class="col-sm-12"><h3 class="display-4 text-center animated lightSpeedIn">Vikings Game</h3></div>
+					
+			</div>
+		
+		<div class="row d-flex align-items-center">
+		
+			<div class="col-sm-3 text-center">
+				
+			<button type="button" class="btn btn-success animated bounceInLeft " onclick="location.reload();">New Game</button>
+					
+			</div>
+		
+			<div class="col-sm-6 text-center bg-light weaponds">
+				<div class="row">
+					<div class="col-sm-3"><h5>Axe</h5><img src='img/axe.png' height="40" width="40"alt="Axe"><p>Damage: 20</p></div>
+					<div class="col-sm-3"><h5>Shield</h5><img src='img/shield.png' height="40" width="40" alt="Shiled"><p>Damage: 30</p></div>	
+					<div class="col-sm-3"><h5>Arrow</h5><img src='img/arrow.png' height="40" width="40" alt="Arrow"><p>Damage: 40</p></div>
+					<div class="col-sm-3"><h5>Thor</h5><img src='img/thor.png' height="40" width="40" alt="Thor"><p>Damage: 50</p></div>	
+				</div>
+			</div>
+			<div class="col-sm-3 text-center">
+				
+				<button type="button" class="btn btn-success animated bounceInRight" data-toggle="modal" data-target="#rulesmodal">Game Rules</button>	
+			
+			</div>
+			
+		
+			
+		</div>
+		<div class="row">
+		<hr class="my-2">
+		</div>
+		
+		<div class="row">
+		
+			<div class="col-sm-3 text-center bg-light left">
+				
+				<h3>Player 1</h3>
+					<p class="btn btn-primary btn-md disabled" id="player1LP">100</p>
+				<h4>Damage</h4>
+					<p id="player1damage">10</p>
+				
+						<button type="button" value="Attack" class="btn btn-danger" id="P1A" disabled onclick="attack()">Attack</button>
+						<button type="button" value="Defend" class="btn btn-success" id="P1D" disabled onclick="defend()">Defend</button>
+		
+				
+						<img src="img/viking1.png" alt="..." class="img-rounded" height="200" width="200" id="imgleft1">
+				
+			</div>
+			
+			<div class="col-sm-6 text-center">
+				<div id ="mapgen">
+				<!--   map generated from js -->
+				</div>
+			</div>
+			
+			<div class="col-sm-3 text-center bg-light right">
+			
+			<h3>Player 2</h3>
+			<p class="btn btn-primary btn-md disabled" id="player2LP">100</p>
+			<h4>Damage</h4>
+			<p id="player2damage">10</p>
+			<button type="button" value="Attack" class="btn btn-danger" id="P2A" disabled onclick="attack()">Attack</button>
+			<button type="button" value="Defend"class="btn btn-success" id="P2D"  disabled onclick="defend()">Defend</button>
+			
+			<img src="img/viking2.png" alt="..." class="img-rounded" height="200" width="200" id="imgright2">
+			
+			</div>
+		
+		
+		</div>
+		<!-- MODAL winner-->
+		<div class="modal fade animated bounce" id="winnerbox">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Game Over!</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <p>The winner is</p>
+                <p><img src="" width="250" id="winner" class="animated rotateIn"></img></p>
+                <p></p>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+			<!--Rules Modal-->
+			<div class="modal fade animated bounce" id="rulesmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header text-center">
+							<h5 class="modal-title text-center" id="exampleModalLabel">Game Rules</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body text-center">
+							<p>Begin the battle between two players...</p>
+<p>You can move a maximum of 3 spaces horizontally or vertically.</p>
+<p>You can collect weapons and increase your damage score.</p>
+<p>The aim of the game is to gain a high weapon damage score and attack the other player.</p>
+<p>Once you are next to them you can attack or defend.</p>
+<p>Good Luck!</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+	<footer class="row">
+		<div class="col-sm-12 text-center">
+		<p> Petrea Silviu Open Classrooms Project Turn Base Game </p>
+		</div>	
+	</footer>	
+	</div>
+	
+	
+	
+	
+	
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<!-- Javascript -->
+	<script src="js/map.js"></script>
+	<script src="js/game.js"></script>
+	<script src="js/move.js"></script>
+	<script src="js/fight.js"></script>
+  </body>
+
+</html>
