@@ -12,3 +12,5 @@ Online game written JavaScript in which 2 players play each turn to compete.
 * The player can choose to attack or defend against the next shot
 * If the player chooses to defend , they sustain 50% less damage than normal
 * When the life points (initially 100) falls to 0, they lose. A message appears and the game is over.
+
+Live Demo: https://petreasil.github.io/Project-6-OpenClassrooms/
